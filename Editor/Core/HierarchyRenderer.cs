@@ -89,8 +89,8 @@ namespace MyHierarchy
         private static bool HasNextSibling = false; 
         private static MyHierarchySettings settings;
 
-        static HierarchyRenderer() => EditorApplication.hierarchyWindowItemOnGUI += OnGameObjectItemRender;
-        static void OnGameObjectItemRender(int instanceID, Rect selectionRect)
+        static HierarchyRenderer() => EditorApplication.hierarchyWindowItemByEntityIdOnGUI += OnGameObjectItemRender;
+        static void OnGameObjectItemRender(EntityId instanceID, Rect selectionRect)
         {
             bool isHeaderGroup = false;
             IsCurrentlyDrawingSelectedObject = false;
@@ -103,24 +103,26 @@ namespace MyHierarchy
             if (!settings.activate)
                 return;
 
-            GameObject go = (GameObject)EditorUtility.InstanceIDToObject(instanceID);
+            GameObject go = (GameObject)EditorUtility.EntityIdToObject(instanceID);
             if (go == null)
                 return;
 
-            GameObject selectedGO = Selection.activeGameObject; 
+            GameObject selectedGO = Selection.activeGameObject;
 
-            if (selectedGO != null){
+            if (selectedGO != null)
+            {
                 if (selectedGO.scene.IsValid()) // check if the selected go is from the hierarchy
                 {
-                    if (selectedGO == go )
+                    if (selectedGO == go)
                         IsCurrentlyDrawingSelectedObject = true;
 
                     if (go.transform.IsChildOf(Selection.activeGameObject.transform))
                         IsSelectedObjectChild = true;
 
-                    if ( selectedGO.transform.parent != null && go.transform.IsChildOf(selectedGO.transform.parent))
+                    if (selectedGO.transform.parent != null && go.transform.IsChildOf(selectedGO.transform.parent))
                         IsSiblingOfSelectedObject = true;
-                    else {
+                    else
+                    {
                         IsSiblingOfSelectedObject = false;
                     }
                 }
@@ -132,7 +134,7 @@ namespace MyHierarchy
             }
 
             if (go.transform.parent != null)
-                HasNextSibling = go.transform.GetSiblingIndex() != go.transform.parent.childCount-1;
+                HasNextSibling = go.transform.GetSiblingIndex() != go.transform.parent.childCount - 1;
 
             if (go.TryGetComponent<MyHierarchyHeader>(out MyHierarchyHeader header))
             {
@@ -140,11 +142,12 @@ namespace MyHierarchy
                 return;
             }
 
-            if (go.TryGetComponent<MyHierarchyGroup>(out MyHierarchyGroup group)){
+            if (go.TryGetComponent<MyHierarchyGroup>(out MyHierarchyGroup group))
+            {
                 isHeaderGroup = true;
                 DrawGroupHeader(selectionRect, go.name, group, go.activeSelf);
             }
-                
+
             // draw only on gameobjects that is parented
             if (selectionRect.xMin > HierarchyRootItemXMin)
                 DrawObjectRelationshipLines(selectionRect, go.transform);

@@ -1,8 +1,8 @@
 {
   "name": "com.inf.my-hierarchy",
-  "version": "1.7.5",
-  "displayName": "My Hierarchy",
-  "description": "Upgraded Hierarchy Window",
+  "version": "1.0",
+  "displayName": "My Hierarchy - MussclikFork",
+  "description": "Updated & Upgraded Hierarchy Window",
   "documentationUrl": "https://i-n-f.itch.io/my-hierarchy",
   "licensesUrl": "https://www.mozilla.org/en-US/MPL/2.0/",
   "keywords": [
@@ -14,5 +14,9 @@
   "author": {
     "name": "inf",
     "url": "https://i-n-f.itch.io/"
+  },
+  "author": {
+    "name": "Mussclik",
+    "url": "https://github.com/Mussclik/My-Hierarchy?tab=readme-ov-file"
   }
 }

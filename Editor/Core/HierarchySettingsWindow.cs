@@ -35,7 +35,7 @@ namespace MyHierarchy
             window.Show();
         }
 
-        private void OnEnable() => bandAid = new ScriptingBandAid();
+        private void OnEnable() => bandAid = ScriptableObject.CreateInstance<ScriptingBandAid>();
 
         private void OnGUI()
         {

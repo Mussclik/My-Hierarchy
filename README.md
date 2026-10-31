@@ -1,12 +1,9 @@
 <h1 align="center">My Hierarchy</h1>
-<h3 align="center">Upgraded Unity Hierarchy - Detailed & Organized</h2>
-
-<br>
-
+<h3 align="center">(Updated &) Upgraded Unity Hierarchy - Detailed & Organized</h2>
 <p align="center">
-<img src="https://github.com/INFGameDev/Project-ReadMe-Images/blob/master/INF%20Seamless%20Logo%20Gif%20160px.gif" >
 </p>
 <h4 align="center">Created By: INF</h4>
+<h6 align="center">Updated fork By: Mussclik</h6>
 
 <hr>
 <p align="center">
@@ -14,8 +11,8 @@
 </p>
 <hr>
 
-
-<p align="center"><b>(╯°□°）╯︵ [ If you liked my asset, Star my repo or follow my itch.io profile ]</b></p>
+<p align="center">Fork updated to use non-deprecated methods for newer versions of unity</p>
+<p align="center"><b>(╯°□°）╯︵ [ If you liked INF's asset, Star their repo or follow their itch.io profile ]</b></p>
 <p align="center">Documentation: https://i-n-f.itch.io/my-hierarchy</p>
 
 
@@ -24,6 +21,7 @@
     <br> OR
     <br> (Recommended) Install it as package through unity's package manager using the git URL of this repo (Add as a package from a git URL).
 </p>
+
 
 
 
